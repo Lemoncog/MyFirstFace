@@ -1,0 +1,19 @@
+{
+  "uuid": "1f192062-e132-4d29-a539-b30f9924d33d",
+  "shortName": "MyFirstFace",
+  "longName": "MyFirstFace",
+  "companyName": "MakeAwesomeHappen",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "sdkVersion": "3",
+  "targetPlatforms": ["aplite", "basalt"],
+  "watchapp": {
+    "watchface": false
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": []
+  }
+}
