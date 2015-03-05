@@ -20,12 +20,7 @@
         "media": [
             {
                 "type": "png", 
-                "name": "ANOTHERIMAGE.PNG", 
-                "file": "resources/images/anotherimage.png"
-            }, 
-            {
-                "type": "png", 
-                "name": "BACKGROUND.PNG", 
+                "name": "BACKGROUND", 
                 "file": "resources/images/background.png"
             }
         ]

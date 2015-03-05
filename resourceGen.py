@@ -26,7 +26,7 @@ del resourcesArray[:]
 for match in matches:
 	resourcesArray.append({
         "type": "png",
-        "name": match.split('/')[-1].upper(),
+        "name": match.split('/')[-1].split('.')[0].upper(),
         "file": match
     })
 

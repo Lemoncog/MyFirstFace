@@ -4,9 +4,16 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     watch: {
-      scripts: {
+      source: {
         files: ['src/**/*.c'],
         tasks: ['exec:build', 'exec:install'],
+        options: {
+          spawn: false,
+        },
+      },
+      resource: {
+        files: ['resources/**/*.png'],
+        tasks: ['exec:resourceGen'],
         options: {
           spawn: false,
         },
@@ -15,7 +22,8 @@ module.exports = function(grunt) {
     exec: {
       echo_something: 'echo "This is something"',
       build: 'pebble build',
-      install: 'pebble install --emulator basalt'
+      install: 'pebble install --emulator basalt',
+      resourceGen: 'python resourceGen.py'
     }
   });
 
