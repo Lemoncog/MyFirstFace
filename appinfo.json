@@ -1,25 +1,33 @@
 {
-  "uuid": "1f192062-e132-4d29-a539-b30f9924d33d",
-  "shortName": "MyFirstFace",
-  "longName": "MyFirstFace",
-  "companyName": "MakeAwesomeHappen",
-  "versionCode": 1,
-  "versionLabel": "1.0",
-  "sdkVersion": "3",
-  "targetPlatforms": ["aplite", "basalt"],
-  "watchapp": {
-    "watchface": false
-  },
-  "appKeys": {
-    "dummy": 0
-  },
-  "resources": {
-    "media": [
-      {
-        "type": "png",
-        "name": "BACKGROUND_IMAGE",
-        "file": "images/background.png"
-      }
-    ]
-  }
+    "versionLabel": "1.0", 
+    "uuid": "1f192062-e132-4d29-a539-b30f9924d33d", 
+    "appKeys": {
+        "dummy": 0
+    }, 
+    "companyName": "MakeAwesomeHappen", 
+    "sdkVersion": "3", 
+    "targetPlatforms": [
+        "aplite", 
+        "basalt"
+    ], 
+    "longName": "MyFirstFace", 
+    "versionCode": 1, 
+    "shortName": "MyFirstFace", 
+    "watchapp": {
+        "watchface": false
+    }, 
+    "resources": {
+        "media": [
+            {
+                "type": "png", 
+                "name": "ANOTHERIMAGE.PNG", 
+                "file": "resources/images/anotherimage.png"
+            }, 
+            {
+                "type": "png", 
+                "name": "BACKGROUND.PNG", 
+                "file": "resources/images/background.png"
+            }
+        ]
+    }
 }
