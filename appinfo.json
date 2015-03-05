@@ -14,6 +14,12 @@
     "dummy": 0
   },
   "resources": {
-    "media": []
+    "media": [
+      {
+        "type": "png",
+        "name": "BACKGROUND_IMAGE",
+        "file": "images/background.png"
+      }
+    ]
   }
 }

@@ -2,6 +2,8 @@
 
 static Window *window;
 static TextLayer *s_time_layer;
+static BitmapLayer *s_background_layer;
+static GBitmap *s_background_bitmap;
 
 static void select_click_handler(ClickRecognizerRef recognizer, void *context) {
   text_layer_set_text(s_time_layer, "Select");
@@ -32,7 +34,7 @@ static void update_time() {
   // Write the current hours and minutes into the buffer
   if(clock_is_24h_style() == true) {
     // Use 24 hour format
-    strftime(buffer, sizeof("00:00"), "%H:%M", tick_time);
+    strftime(buffer, sizeof("00:00"), "%H:%M ", tick_time);
   } else {
     // Use 12 hour format
     strftime(buffer, sizeof("00:00"), "%I:%M", tick_time);
@@ -51,8 +53,14 @@ static void window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_bounds(window_layer);
 
+  // // Create GBitmap, then set to created BitmapLayer
+  s_background_bitmap = gbitmap_create_with_resource(RESOURCE_ID_BACKGROUND_IMAGE); 
+  s_background_layer = bitmap_layer_create(GRect(0, 0, 144, 168));
+  bitmap_layer_set_bitmap(s_background_layer, s_background_bitmap);
+  layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_background_layer));
+
   // Create time TextLayer
-  s_time_layer = text_layer_create(GRect(0, 55, 144, 50));
+  s_time_layer = text_layer_create(GRect(0, 50, 144, 50));
   text_layer_set_background_color(s_time_layer, GColorClear);
   text_layer_set_text_color(s_time_layer, GColorBlack);
 
@@ -68,6 +76,12 @@ static void window_load(Window *window) {
 
 static void window_unload(Window *window) {
   text_layer_destroy(s_time_layer);
+
+  // Destroy GBitmap
+  gbitmap_destroy(s_background_bitmap);
+
+  // Destroy BitmapLayer
+  bitmap_layer_destroy(s_background_layer);
 }
 
 static void init(void) {
