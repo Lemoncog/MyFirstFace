@@ -27,7 +27,7 @@ for match in matches:
 	resourcesArray.append({
         "type": "png",
         "name": match.split('/')[-1].split('.')[0].upper(),
-        "file": match
+        "file": '/'.join(match.split('/')[1:])
     })
 
 print 'resourcesArray {0}'.format(resourcesArray)

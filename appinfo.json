@@ -21,7 +21,7 @@
             {
                 "type": "png", 
                 "name": "BACKGROUND", 
-                "file": "resources/images/background.png"
+                "file": "images/background.png"
             }
         ]
     }
